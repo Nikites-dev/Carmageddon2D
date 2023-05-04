@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d46f14137f580884bb9c4ec3c2d42818
+guid: 35fe339df8d019941a122414438c6aa4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,89 +103,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Preview2-4_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1800
-        height: 1200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -854, y: 130}
-        - {x: -863, y: 324}
-        - {x: -522, y: 324}
-        - {x: -511, y: 132}
-      physicsShape:
-      - - {x: -844, y: 131}
-        - {x: -837, y: 323}
-        - {x: -514, y: 323}
-        - {x: -526, y: 127}
-      - - {x: -871, y: 373}
-        - {x: -871, y: 583}
-        - {x: -451, y: 583}
-        - {x: -451, y: 373}
-      - - {x: -514, y: 131}
-        - {x: -500, y: 323}
-        - {x: -123, y: 325}
-        - {x: -123, y: 133}
-      - - {x: -444, y: 371}
-        - {x: -446, y: 581}
-        - {x: 17, y: 585}
-        - {x: 17, y: 355}
-      - - {x: -112, y: 142}
-        - {x: -112, y: 332}
-        - {x: 234, y: 332}
-        - {x: 234, y: 142}
-      - - {x: 241, y: 142}
-        - {x: 241, y: 344}
-        - {x: 525, y: 344}
-        - {x: 525, y: 142}
-      - - {x: 35, y: 350}
-        - {x: 35, y: 590}
-        - {x: 507, y: 590}
-        - {x: 507, y: 350}
-      - - {x: 498, y: 373}
-        - {x: 498, y: 590}
-        - {x: 835, y: 590}
-        - {x: 842, y: 362}
-      - - {x: 534, y: 122}
-        - {x: 534, y: 346}
-        - {x: 873, y: 346}
-        - {x: 873, y: 122}
-      - - {x: 458, y: -108}
-        - {x: 458, y: 111}
-        - {x: 837, y: 111}
-        - {x: 837, y: -108}
-      - - {x: -53, y: -165}
-        - {x: -53, y: 127}
-        - {x: 426, y: 127}
-        - {x: 450, y: -38}
-        - {x: 365, y: -181}
-      - - {x: -412, y: -113}
-        - {x: -410, y: 115}
-        - {x: -64, y: 115}
-        - {x: -64, y: -120}
-      - - {x: -849, y: -118}
-        - {x: -849, y: 108}
-        - {x: -426, y: 108}
-        - {x: -433, y: -120}
-      - - {x: -85, y: -339}
-        - {x: -85, y: -197}
-        - {x: 329, y: -197}
-        - {x: 329, y: -339}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 021716545619477429ac5c99ab261763
-      internalID: 561435085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -196,11 +114,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Preview2-4_0: 561435085
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
