@@ -9,18 +9,16 @@ public class RoadMoving : MonoBehaviour
     
     public float speed = 10;
 
-    private float distance = 19f; //2f
+    private float distance = 34f; //2f
     
     public float startX;
     // public float endY;   
-
 
     private void Start()
     {
         roadPrefab.position = new Vector3(startX, roadPrefab.position.y, roadPrefab.position.z);
 
     }
-
 
     void Update ()
     {
@@ -29,8 +27,6 @@ public class RoadMoving : MonoBehaviour
         if (roadPrefab.position.x < startX - distance) {
             roadPrefab.position = new Vector3(startX, roadPrefab.position.y, roadPrefab.position.z);
         }
-        
-        
         
         if (Input.GetKey(KeyCode.W))
         {
