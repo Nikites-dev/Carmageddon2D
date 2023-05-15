@@ -1,8 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarMoving:MonoBehaviour
+public class Car2Moving:MonoBehaviour
     {
         [SerializeField] private float _moveSpeed;
             [SerializeField] private Transform _left;
@@ -33,14 +33,14 @@ public class CarMoving:MonoBehaviour
                         _isTurning = false;
                     }
                 }
-                if (Input.GetKeyDown(KeyCode.A))
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     _direction.x = transform.position.x - 2.2f;
                     _direction.y = transform.position.y;
                     _isTurning = true;
                     cntTurn++;
                 }
-                if (Input.GetKeyDown(KeyCode.D))
+                if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     _direction.x = transform.position.x + 2.2f;
                     _direction.y = transform.position.y;
@@ -49,14 +49,14 @@ public class CarMoving:MonoBehaviour
                 }
                 
                 
-                if (Input.GetKeyDown(KeyCode.S))
+                if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     _direction.y = transform.position.y - 2.2f;
                     _direction.x = transform.position.x;
                     _isTurning = true;
                     cntTurn++;
                 }
-                if (Input.GetKeyDown(KeyCode.W))
+                if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     _direction.y = transform.position.y + 2.2f;
                     _direction.x = transform.position.x;
