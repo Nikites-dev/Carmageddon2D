@@ -17,10 +17,11 @@ namespace DefaultNamespace
                 // Создание объекта пули
                 GameObject bullet = Instantiate(bulletPrefab, carPrefab.position, carPrefab.rotation);
 
-                bullet.transform.position += Vector3.right* 100 * Time.deltaTime;
+               
                 
                 // Задание скорости пули
-                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.forward * 6;
+                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * 6;
+                
                 
                 
             }
