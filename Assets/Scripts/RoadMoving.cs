@@ -9,7 +9,7 @@ public class RoadMoving : MonoBehaviour
     
     public float speed = 10;
 
-    private float distance = 19f; //2f
+    private float distance = 18f; //2f
     
     public float startX;
     // public float endY;   
@@ -18,7 +18,6 @@ public class RoadMoving : MonoBehaviour
     private void Start()
     {
         roadPrefab.position = new Vector3(startX, roadPrefab.position.y, roadPrefab.position.z);
-
     }
 
 
@@ -30,30 +29,24 @@ public class RoadMoving : MonoBehaviour
             roadPrefab.position = new Vector3(startX, roadPrefab.position.y, roadPrefab.position.z);
         }
         
-        
-        
         if (Input.GetKey(KeyCode.W))
         {
             speedReg("+");
-
         }
                 
         if (Input.GetKey(KeyCode.S))
         {
             speedReg("-");
-
         }
                 
         if (Input.GetKey(KeyCode.UpArrow))
         {
             speedReg("+");
-
         }
                 
         if (Input.GetKey(KeyCode.DownArrow))
         {
             speedReg("-");
-
         }
     }
 
@@ -75,5 +68,4 @@ public class RoadMoving : MonoBehaviour
             speed = 0;
         }
     }
-    
 }
