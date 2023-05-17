@@ -35,33 +35,91 @@ public class CarMoving:MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.A))
                 {
-                    _direction.x = transform.position.x - 2.2f;
-                    _direction.y = transform.position.y;
-                    _isTurning = true;
-                    cntTurn++;
+                    if (transform.position.x - 2.2f > -7 && transform.position.x - 2.2f < 9)
+                    {
+                        _direction.x = transform.position.x - 2.2f;
+                        _direction.y = transform.position.y;
+                        _isTurning = true;
+                        cntTurn++;
+                    }
                 }
                 if (Input.GetKeyDown(KeyCode.D))
                 {
-                    _direction.x = transform.position.x + 2.2f;
-                    _direction.y = transform.position.y;
-                    _isTurning = true;
-                    cntTurn--;
+                    if (transform.position.x + 2.2f > -7 && transform.position.x + 2.2f < 9)
+                    {
+                        _direction.x = transform.position.x + 2.2f;
+                        _direction.y = transform.position.y;
+                        _isTurning = true;
+                        cntTurn--;
+                    }
                 }
                 
                 
                 if (Input.GetKeyDown(KeyCode.S))
                 {
-                    _direction.y = transform.position.y - 2.2f;
-                    _direction.x = transform.position.x;
-                    _isTurning = true;
-                    cntTurn++;
+                    bool isMove = false;
+                    if (transform.position.y - 2.2f > -4.7 && transform.position.y - 2.2f < 1)
+                    {
+                        _direction.y = transform.position.y - 2.2f;
+                        isMove = true;
+                    }
+                    else
+                    {
+                        if (transform.position.y - 1f > -4.7 && transform.position.y - 1f < 1)
+                        {
+                            _direction.y = transform.position.y - 1f;
+                            isMove = true;
+                        }
+                        else
+                        {
+                            if (transform.position.y - 0.3f > -4.7 && transform.position.y - 1f < 1)
+                            {
+                                _direction.y = transform.position.y - 0.3f;
+                                isMove = true;
+                            }
+                        }
+                    }
+
+                    if (isMove)
+                    {
+                        _direction.x = transform.position.x;
+                        _isTurning = true;
+                        cntTurn++;
+                    }
+
+
                 }
                 if (Input.GetKeyDown(KeyCode.W))
                 {
-                    _direction.y = transform.position.y + 2.2f;
-                    _direction.x = transform.position.x;
-                    _isTurning = true;
-                    cntTurn--;
+                    bool isMove = false;
+                    if (transform.position.y + 2.2f > -4.7 && transform.position.y + 2.2f < 1.5)
+                    {
+                        _direction.y = transform.position.y + 2.2f;
+                        isMove = true;
+                    }
+                    else
+                    {
+                        if (transform.position.y + 1f > -4.7 && transform.position.y + 1f < 1.5)
+                        {
+                            _direction.y = transform.position.y + 1f;
+                            isMove = true;
+                        }
+                        else
+                        {
+                            if (transform.position.y + 0.3f > -4.7 && transform.position.y + 0.3f < 1.5)
+                            {
+                                _direction.y = transform.position.y + 0.3f;
+                                isMove = true;
+                            }
+                        }
+                    }
+
+                    if (isMove)
+                    {
+                        _direction.x = transform.position.x;
+                        _isTurning = true;
+                        cntTurn++;
+                    }
                 }
                
             }
