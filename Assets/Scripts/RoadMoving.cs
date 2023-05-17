@@ -9,7 +9,7 @@ public class RoadMoving : MonoBehaviour
     
     public float speed = 10;
 
-    private float distance = 18f; //2f
+    public float distance; //2f
     
     public float startX;
     // public float endY;   
