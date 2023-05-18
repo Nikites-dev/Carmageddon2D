@@ -1,18 +1,17 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
-    public class BulletCollision: MonoBehaviour
+    public class BulletCollision2:MonoBehaviour
     {
         public int carHP = 100; 
         
-         [SerializeField] private GameObject txtHP;
+        [SerializeField] private GameObject txtHP;
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            carHP--;
+            carHP-= 5;
 
             txtHP.GetComponent<Text>().text = carHP.ToString();
             Destroy(collision.gameObject);

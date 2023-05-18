@@ -4,11 +4,10 @@ namespace DefaultNamespace
 {
     public class BorderCollision:MonoBehaviour
     {
-        
-        
-        private void OnTriggerEnter2D(Collider2D collider)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            
+            Destroy(collision.gameObject);
+            // bulletPrefab.
         }
     }
 }
