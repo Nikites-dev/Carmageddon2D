@@ -17,12 +17,7 @@ public class Car2Moving:MonoBehaviour
             void Update()
             {
                 _moveSpeed = 2f;
-                // float horizontalInput = Input.GetAxisRaw("Horizontal");
-                // var target = transform.position;
-                // target.x += horizontalInput;
-                // target.x = Mathf.Clamp(target.x, _left.position.x + _left.localScale.x, _right.position.x - _right.localScale.x);
-                // transform.position = Vector3.MoveTowards(transform.position, target, _moveSpeed);
-                
+               
                 if(_isTurning)
                 {
           
@@ -35,35 +30,132 @@ public class Car2Moving:MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    _direction.x = transform.position.x - 2.2f;
-                    _direction.y = transform.position.y;
-                    _isTurning = true;
-                    cntTurn++;
+                    bool isMove = false;
+                    if (transform.position.x - 2.2f > 5.7 && transform.position.x - 2.2f < 11.5)
+                    {
+                        _direction.x = transform.position.x - 2.2f;
+                        isMove = true;
+                    }
+                    else
+                    {
+                        if (transform.position.x - 1f > 5.7 && transform.position.x - 1f < 11.5)
+                        {
+                            _direction.x = transform.position.x - 1f;
+                            isMove = true;
+                        }
+                        else
+                        {
+                            if (transform.position.x - 0.5f > 5.7 && transform.position.x - 0.5f < 11.5)
+                            {
+                                _direction.x = transform.position.x - 0.5f;
+                                isMove = true;
+                            }
+                        }
+                    }
+                    
+                    if (isMove)
+                    {
+                        _direction.y = transform.position.y;
+                        _isTurning = true;
+                    }
                 }
                 if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    _direction.x = transform.position.x + 2.2f;
-                    _direction.y = transform.position.y;
-                    _isTurning = true;
-                    cntTurn--;
+                    bool isMove = false;
+                    if (transform.position.x + 2.2f > 5.7 && transform.position.x + 2.2f < 11.5)
+                    {
+                        _direction.x = transform.position.x + 2.2f;
+                        isMove = true;
+                    }
+                    else
+                    {
+                        if (transform.position.x + 1f > 5.7 && transform.position.x + 1f < 11.5)
+                        {
+                            _direction.x = transform.position.x + 1f;
+                            isMove = true;
+                        }
+                        else
+                        {
+                            if (transform.position.x + 0.5f > 5.7 && transform.position.x + 0.5f < 11.5)
+                            {
+                                _direction.x = transform.position.x + 0.5f;
+                                isMove = true;
+                            }
+                        }
+                    }
+                    
+                    if (isMove)
+                    {
+                        _direction.y = transform.position.y;
+                        _isTurning = true;
+                    }
                 }
                 
                 
                 if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    _direction.y = transform.position.y - 2.2f;
-                    _direction.x = transform.position.x;
-                    _isTurning = true;
-                    cntTurn++;
+                    bool isMove = false;
+                    if (transform.position.y - 2.2f > -3 && transform.position.y - 2.2f < 3.3)
+                    {
+                        _direction.y = transform.position.y - 2.2f;
+                        isMove = true;
+                    }
+                    else
+                    {
+                        if (transform.position.y - 1f > -3 && transform.position.y - 1f < 3.3)
+                        {
+                            _direction.y = transform.position.y - 1f;
+                            isMove = true;
+                        }
+                        else
+                        {
+                            if (transform.position.y - 0.3f > -3 && transform.position.y - 1f < 3.3)
+                            {
+                                _direction.y = transform.position.y - 0.3f;
+                                isMove = true;
+                            }
+                        }
+                    }
+
+                    if (isMove)
+                    {
+                        _direction.x = transform.position.x;
+                        _isTurning = true;
+                    }
+
+
                 }
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    _direction.y = transform.position.y + 2.2f;
-                    _direction.x = transform.position.x;
-                    _isTurning = true;
-                    cntTurn--;
+                    bool isMove = false;
+                    if (transform.position.y + 2.2f > -3 && transform.position.y + 2.2f < 3.3)
+                    {
+                        _direction.y = transform.position.y + 2.2f;
+                        isMove = true;
+                    }
+                    else
+                    {
+                        if (transform.position.y + 1f > -4 && transform.position.y + 1f < 3.3)
+                        {
+                            _direction.y = transform.position.y + 1f;
+                            isMove = true;
+                        }
+                        else
+                        {
+                            if (transform.position.y + 0.3f > -4 && transform.position.y + 0.3f < 3.3)
+                            {
+                                _direction.y = transform.position.y + 0.3f;
+                                isMove = true;
+                            }
+                        }
+                    }
+
+                    if (isMove)
+                    {
+                        _direction.x = transform.position.x;
+                        _isTurning = true;
+                    }
                 }
-               
             }
             
         

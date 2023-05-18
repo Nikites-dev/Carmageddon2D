@@ -35,22 +35,48 @@ public class CarMoving:MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.A))
                 {
-                    if (transform.position.x - 2.2f > -7 && transform.position.x - 2.2f < 9)
+                    bool isMove = false;
+                    if (transform.position.x - 2.2f > -7 && transform.position.x - 2.2f < 0.6)
                     {
                         _direction.x = transform.position.x - 2.2f;
+                        isMove = true;
+                    }
+                    else
+                    {
+                        if (transform.position.x - 1f > -7 && transform.position.x - 1f < 0.6)
+                        {
+                            _direction.x = transform.position.x - 1f;
+                            isMove = true;
+                        }
+                    }
+                    
+                    if (isMove)
+                    {
                         _direction.y = transform.position.y;
                         _isTurning = true;
-                        cntTurn++;
                     }
                 }
                 if (Input.GetKeyDown(KeyCode.D))
                 {
-                    if (transform.position.x + 2.2f > -7 && transform.position.x + 2.2f < 9)
+                    bool isMove = false;
+                    if (transform.position.x + 2.2f > -7 && transform.position.x + 2.2f < 0.6)
                     {
                         _direction.x = transform.position.x + 2.2f;
+                        isMove = true;
+                    }
+                    else
+                    {
+                        if (transform.position.x + 1f > -7 && transform.position.x + 1f < 0.6)
+                        {
+                            _direction.x = transform.position.x + 1f;
+                            isMove = true;
+                        }
+                    }
+                    
+                    if (isMove)
+                    {
                         _direction.y = transform.position.y;
                         _isTurning = true;
-                        cntTurn--;
                     }
                 }
                 
@@ -84,7 +110,6 @@ public class CarMoving:MonoBehaviour
                     {
                         _direction.x = transform.position.x;
                         _isTurning = true;
-                        cntTurn++;
                     }
 
 
@@ -118,7 +143,6 @@ public class CarMoving:MonoBehaviour
                     {
                         _direction.x = transform.position.x;
                         _isTurning = true;
-                        cntTurn++;
                     }
                 }
                
