@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CarMoving:MonoBehaviour
     {
         [SerializeField] private float _moveSpeed;
-            [SerializeField] private Transform _left;
-            [SerializeField] private Transform _right;
-
-            [SerializeField] private Transform _blockBottom;
-            
+            [SerializeField] private GameObject carPrefab;
+          
             private int cntTurn = 0;
-            
+            public Rigidbody rb;
             private Vector2 _direction;
             bool _isTurning = false;
+
+            void Start()
+            {
+                rb = GetComponent<Rigidbody>();
+            }
+
             void Update()
             {
                 _moveSpeed = 2f;
@@ -54,10 +58,16 @@ public class CarMoving:MonoBehaviour
                     {
                         _direction.y = transform.position.y;
                         _isTurning = true;
+                        carPrefab.GetComponent<Rigidbody2D>().velocity = new Vector3(-1, 0, 0);
+                    }
+                    else
+                    {
+                        carPrefab.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
                     }
                 }
                 if (Input.GetKeyDown(KeyCode.D))
                 {
+                  
                     bool isMove = false;
                     if (transform.position.x + 2.2f > -7 && transform.position.x + 2.2f < 0.6)
                     {
@@ -77,12 +87,18 @@ public class CarMoving:MonoBehaviour
                     {
                         _direction.y = transform.position.y;
                         _isTurning = true;
+                        carPrefab.GetComponent<Rigidbody2D>().velocity = new Vector3(1, 0, 0);
+                    }
+                    else
+                    {
+                        carPrefab.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
                     }
                 }
                 
                 
                 if (Input.GetKeyDown(KeyCode.S))
                 {
+                   
                     bool isMove = false;
                     if (transform.position.y - 2.2f > -4.7 && transform.position.y - 2.2f < 1)
                     {
@@ -110,12 +126,14 @@ public class CarMoving:MonoBehaviour
                     {
                         _direction.x = transform.position.x;
                         _isTurning = true;
+                        carPrefab.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
                     }
 
 
                 }
                 if (Input.GetKeyDown(KeyCode.W))
                 {
+                   
                     bool isMove = false;
                     if (transform.position.y + 2.2f > -4.7 && transform.position.y + 2.2f < 1.5)
                     {
@@ -143,17 +161,28 @@ public class CarMoving:MonoBehaviour
                     {
                         _direction.x = transform.position.x;
                         _isTurning = true;
+                        carPrefab.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
                     }
                 }
-               
+                
+                if(transform.position.x > -7 && transform.position.x < 0.6)
+                {
+                  
+                }
+                else
+                {
+                    carPrefab.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+                }
+
             }
             
-        
+           
+
             // [SerializeField] private GameObject _imageCritical;
             private void OnTriggerEnter2D(Collider2D collision)
             {
                 Time.timeScale = 0f;
-                _blockBottom.gameObject.SetActive(true);
+              //  _blockBottom.gameObject.SetActive(true);
                 // _imageCritical.SetActive(true);
                 // Destroy(collision.gameObject);
             }

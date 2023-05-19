@@ -1295,9 +1295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 1.48
-  _left: {fileID: 0}
-  _right: {fileID: 0}
-  _blockBottom: {fileID: 0}
+  carPrefab: {fileID: 1425490420}
+  rb: {fileID: 0}
 --- !u!4 &1425490423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6114118816519491416, guid: 0bea4bedfeb715f4c96b85a68c8a1657, type: 3}
@@ -1379,6 +1378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carHP: 100
   txtHP: {fileID: 2049978743}
+  car1Prefab: {fileID: 1425490420}
 --- !u!1 &1447193209
 GameObject:
   m_ObjectHideFlags: 0

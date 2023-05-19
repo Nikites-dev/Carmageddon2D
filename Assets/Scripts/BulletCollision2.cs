@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 namespace DefaultNamespace
 {
     public class BulletCollision2:MonoBehaviour
     {
-        public int carHP = 100; 
-        
+        public int carHP = 100;
+        private Random random = new Random();
         [SerializeField] private GameObject txtHP;
+        [SerializeField] private GameObject car1Prefab;
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            int numRndx = random.Next(-8, -3); 
+            int numRndy = random.Next(-2, 3); 
+            car1Prefab.GetComponent<Rigidbody2D>().velocity = new Vector3(numRndx, numRndy, 0);
+            
             carHP-= 5;
 
             txtHP.GetComponent<Text>().text = carHP.ToString();
