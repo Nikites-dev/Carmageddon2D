@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 472735719}
   - component: {fileID: 472735718}
   - component: {fileID: 472735720}
+  - component: {fileID: 472735721}
   m_Layer: 0
   m_Name: ScriptBehavior
   m_TagString: Untagged
@@ -427,6 +428,21 @@ MonoBehaviour:
   speed: 1.3
   distance: 14.7
   startX: 0
+--- !u!114 &472735721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472735717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041d61289f17da74eb79582da6c519d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 35
+  trainPrefab: {fileID: 3792234845314523805, guid: b77c3b462bfbac34a9a2261c2a0599ed, type: 3}
+  pointPrefab: {fileID: 2091894760}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594193637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.13, y: -0.16, z: 0}
+  m_LocalPosition: {x: 50.6, y: -0.16, z: 0}
   m_LocalScale: {x: 1.3377905, y: 10.381076, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1391,7 +1407,7 @@ GameObject:
   m_Layer: 0
   m_Name: BorderBullet (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1493,7 +1509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447193209}
   m_LocalRotation: {x: 0.0854871, y: 0.05051184, z: 0.46023002, w: 0.8822295}
-  m_LocalPosition: {x: -27.58, y: -1.11, z: 2.42}
+  m_LocalPosition: {x: -65.8, y: -1.2, z: 9}
   m_LocalScale: {x: 1.3377905, y: 18.408762, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1916,6 +1932,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049978743}
   m_CullTransparentMesh: 1
+--- !u!1 &2091894759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2091894760}
+  m_Layer: 0
+  m_Name: pointSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2091894760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091894759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.23, y: 1.02, z: 400}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2109569629
 GameObject:
   m_ObjectHideFlags: 0
