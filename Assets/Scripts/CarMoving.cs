@@ -169,7 +169,10 @@ public class CarMoving : MonoBehaviour
     // [SerializeField] private GameObject _imageCritical;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Time.timeScale = 0f;
+        // if (collision.gameObject.tag == "FireZone")
+        //     transform.localScale *= 2;
+        
+       // Time.timeScale = 0f;
         //  _blockBottom.gameObject.SetActive(true);
         // _imageCritical.SetActive(true);
         // Destroy(collision.gameObject);

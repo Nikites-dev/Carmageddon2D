@@ -12,10 +12,23 @@ namespace DefaultNamespace
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            carHP--;
+            if (collision.gameObject.tag != "Train")
+            {
+                carHP--;
 
-            txtHP.GetComponent<Text>().text = carHP.ToString();
-            Destroy(collision.gameObject);
+                txtHP.GetComponent<Text>().text = carHP.ToString();
+                Destroy(collision.gameObject);    
+            }
+            else
+            {
+                carHP -= 20;
+                txtHP.GetComponent<Text>().text = carHP.ToString();
+            }
+            
         }
+        
+        
     }
+    
+    
 }
