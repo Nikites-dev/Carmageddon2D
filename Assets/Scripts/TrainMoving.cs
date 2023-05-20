@@ -29,6 +29,11 @@ namespace DefaultNamespace
         {
             for (int i = 0; i < 999999; i++)
             {
+                int numWait = random.Next(10, 30);
+                
+                yield return new WaitForSeconds(numWait);
+                
+                
                 int numSide = random.Next(0, 2);
 
                 if (numSide == 1)
@@ -83,9 +88,7 @@ namespace DefaultNamespace
                     train.tag = "Train";
                     
                     train.GetComponent<Rigidbody2D>().velocity = - train.transform.right * (_moveSpeed);
-            
-            
-                    yield return new WaitForSeconds(10f);
+                    
                 }
 
 

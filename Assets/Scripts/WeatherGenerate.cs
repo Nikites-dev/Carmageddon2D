@@ -10,6 +10,7 @@ namespace DefaultNamespace
     {
         [SerializeField] private float _moveSpeed;
         [SerializeField] private GameObject fogPrefab;
+        [SerializeField] private GameObject thunderPrefab;
         [SerializeField] private Transform fogPoints;
         private Random random = new Random();
         
@@ -22,17 +23,18 @@ namespace DefaultNamespace
         {
             for (int i = 0; i < 999999; i++)
             {
-                
-                int numWait = random.Next(10, 30);
+                int numWait = random.Next(5, 20);
                 
                 yield return new WaitForSeconds(numWait);
-                
-                
+
                 int numSide = random.Next(0, 2);
 
-                if (numSide == 10)
+                if (numSide == 0)
                 {
-                  
+                    int numDelay = random.Next(10, 15);
+                    thunderPrefab.SetActive(true);
+                    yield return new WaitForSeconds(numDelay);
+                    thunderPrefab.SetActive(false);
                 }
                 else
                 {
@@ -49,7 +51,6 @@ namespace DefaultNamespace
                   //  Destroy(warning);
                     
                     GameObject fog = Instantiate(fogPrefab, pos, fogPoints.rotation);
-                    fog.tag = "Fog";
                     
                     fog.GetComponent<Rigidbody2D>().velocity = - fog.transform.right * (_moveSpeed);
                     yield return new WaitForSeconds(6f);
