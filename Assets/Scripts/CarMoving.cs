@@ -34,17 +34,24 @@ public class CarMoving : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             bool isMove = false;
-            if (transform.position.x - 2.2f > -7 && transform.position.x - 2.2f < 0.6)
+            if (transform.position.x - 2.2f > -4 && transform.position.x - 2.2f < 3.5)
             {
                 _direction.x = transform.position.x - 2.2f;
                 isMove = true;
             }
-            else
             {
-                if (transform.position.x - 1f > -7 && transform.position.x - 1f < 0.6)
+                if (transform.position.x - 1f > -4 && transform.position.x - 1f < 3.5)
                 {
                     _direction.x = transform.position.x - 1f;
                     isMove = true;
+                }
+                else
+                {
+                    if (transform.position.x - 0.5f > -4 && transform.position.x - 0.5f < 3.5)
+                    {
+                        _direction.x = transform.position.x - 0.5f;
+                        isMove = true;
+                    }
                 }
             }
 
@@ -63,17 +70,25 @@ public class CarMoving : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             bool isMove = false;
-            if (transform.position.x + 2.2f > -7 && transform.position.x + 2.2f < 0.6)
+            if (transform.position.x + 2.2f > -4 && transform.position.x + 2.2f < 3.5)
             {
                 _direction.x = transform.position.x + 2.2f;
                 isMove = true;
             }
             else
             {
-                if (transform.position.x + 1f > -7 && transform.position.x + 1f < 0.6)
+                if (transform.position.x + 1f > -4 && transform.position.x + 1f < 3.5)
                 {
                     _direction.x = transform.position.x + 1f;
                     isMove = true;
+                }
+                else
+                {
+                    if (transform.position.x + 0.5f > -4 && transform.position.x + 0.5f < 3.5)
+                    {
+                        _direction.x = transform.position.x + 0.5f;
+                        isMove = true;
+                    }
                 }
             }
 

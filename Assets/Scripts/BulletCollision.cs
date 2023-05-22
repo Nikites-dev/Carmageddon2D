@@ -12,7 +12,9 @@ namespace DefaultNamespace
         
          [SerializeField] private GameObject txtHP;
          [SerializeField] private GameObject car2Prefab;
-
+         [SerializeField] private GameObject loseGamePrefab;
+         [SerializeField] private GameObject textWin;
+         
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.tag != "Train")
@@ -31,7 +33,14 @@ namespace DefaultNamespace
                 carHP -= 20;
                 txtHP.GetComponent<Text>().text = carHP.ToString();
             }
-            
+
+            if (carHP < 1)
+            {
+                loseGamePrefab.SetActive(true);
+                textWin.GetComponent<Text>().text = "Player 1";
+                Time.timeScale = 0f;
+            }
+
         }
         
         
