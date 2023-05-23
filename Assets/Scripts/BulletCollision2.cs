@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
@@ -17,6 +18,8 @@ namespace DefaultNamespace
         [SerializeField] private GameObject boostButton;
         [SerializeField] private GameObject regenerateButton;
 
+        [SerializeField] private GameObject reverseLoadPrefab;
+        
         void Update()
         {
             if (Car1.BonusCount > 0)
@@ -32,12 +35,20 @@ namespace DefaultNamespace
             }
         }
 
+        IEnumerator TimeEncriese()
+        {
+            reverseLoadPrefab.SetActive(true);
+            yield return new WaitForSeconds(1);
+            reverseLoadPrefab.SetActive(false);
+        }
+        
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.tag == "Reverse")
             {
                 CarControl.isNormalControl = !CarControl.isNormalControl;
                 Destroy(collision.gameObject);
+                StartCoroutine(TimeEncriese());
             }
 
             if (collision.gameObject.tag == "Bonus")

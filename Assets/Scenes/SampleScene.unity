@@ -1098,6 +1098,7 @@ MonoBehaviour:
   textWin: {fileID: 1725135332}
   boostButton: {fileID: 1255578162}
   regenerateButton: {fileID: 1890926660}
+  reverseLoadPrefab: {fileID: 25549323}
 --- !u!4 &580144915 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1195974598384148704, guid: 3964f788a5a82514ea5db34aa1bc4994, type: 3}
@@ -1637,29 +1638,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReverseBonus
       objectReference: {fileID: 0}
+    - target: {fileID: 40838744801641070, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521825993818464162, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2521825993818464162, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
       propertyPath: m_Color.b
-      value: 0.754717
+      value: 0.8254717
       objectReference: {fileID: 0}
     - target: {fileID: 2521825993818464162, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
       propertyPath: m_Color.g
-      value: 0.754717
+      value: 0.8254717
       objectReference: {fileID: 0}
     - target: {fileID: 2521825993818464162, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
       propertyPath: m_Color.r
-      value: 0.754717
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9080309773606493530, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9080309773606493530, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.107774995
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080309773606493530, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.107774995
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080309773606493530, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.107774995
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080309773606493530, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.08
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 9080309773606493530, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.83
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 9080309773606493530, guid: 4cdb6625917a43640821b6398b04dca1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3147,6 +3168,7 @@ MonoBehaviour:
   textWin: {fileID: 1725135332}
   boostButton: {fileID: 1900698100}
   regenerateButton: {fileID: 185149851}
+  reverseLoadPrefab: {fileID: 25549323}
 --- !u!1 &1436956677
 GameObject:
   m_ObjectHideFlags: 0
