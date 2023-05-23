@@ -40,6 +40,7 @@ namespace DefaultNamespace
             if (collision.gameObject.tag == "Reverse")
             {
                 CarControl.isNormalControl = !CarControl.isNormalControl;
+                Destroy(collision.gameObject);
             }
 
             if (collision.gameObject.tag == "Bonus")
@@ -55,7 +56,7 @@ namespace DefaultNamespace
                 txtHP.GetComponent<Text>().text = Car2.Health.ToString();
             }
 
-            else if (collision.gameObject.tag != "Train" && collision.gameObject.tag != "Bonus")
+            else if (collision.gameObject.tag != "Train" && collision.gameObject.tag != "Bonus" && collision.gameObject.tag != "Reverse")
             {
                 double numRndx = -random.NextDouble() * (0.9 - 0) + 0;
                 double numRndy = -random.NextDouble() * (0.5 - 0) + 0;
