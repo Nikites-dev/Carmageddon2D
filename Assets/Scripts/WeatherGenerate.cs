@@ -57,8 +57,6 @@ namespace DefaultNamespace
                     
                     Destroy(fog);
                 }
-
-
             }
         }
     }

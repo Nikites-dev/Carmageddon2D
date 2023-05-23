@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,15 +13,28 @@ namespace DefaultNamespace
         float lastTime;
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.M))
+            if (CarControl.isNormalControl)
             {
-                if (Time.realtimeSinceStartup - lastTime > 1f)
+                if (Input.GetKeyDown(KeyCode.M))
                 {
-                    CreateBullet();
-                    lastTime = Time.realtimeSinceStartup;
+                    if (Time.realtimeSinceStartup - lastTime > 1f)
+                    {
+                        CreateBullet();
+                        lastTime = Time.realtimeSinceStartup;
+                    }
                 }
-                
-              
+            }
+
+            else 
+            {
+                if (Input.GetKeyDown(KeyCode.V))
+                {
+                    if (Time.realtimeSinceStartup - lastTime > 1f)
+                    {
+                        CreateBullet();
+                        lastTime = Time.realtimeSinceStartup;
+                    }
+                }
             }
         }
 

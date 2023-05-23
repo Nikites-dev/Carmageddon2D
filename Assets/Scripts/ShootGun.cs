@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,13 +13,28 @@ namespace DefaultNamespace
         
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.V))
+            if (CarControl.isNormalControl)
             {
-                // Создание объекта пули
-                GameObject bullet = Instantiate(bulletPrefab, carPrefab.position, carPrefab.rotation);
-                
-                // Задание скорости пули
-                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * 6;
+                if (Input.GetKeyDown(KeyCode.V))
+                {
+                    // Создание объекта пули
+                    GameObject bullet = Instantiate(bulletPrefab, carPrefab.position, carPrefab.rotation);
+
+                    // Задание скорости пули
+                    bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * 6;
+                }
+            }
+
+            else 
+            {
+                if (Input.GetKeyDown(KeyCode.M))
+                {
+                    // Создание объекта пули
+                    GameObject bullet = Instantiate(bulletPrefab, carPrefab.position, carPrefab.rotation);
+
+                    // Задание скорости пули
+                    bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * 6;
+                }
             }
         }
     }

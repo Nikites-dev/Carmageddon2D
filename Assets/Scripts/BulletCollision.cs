@@ -1,50 +1,85 @@
 ﻿
+using Assets.Scripts;
+using System;
+using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
 
 namespace DefaultNamespace
 {
-    public class BulletCollision: MonoBehaviour
+    public class BulletCollision : MonoBehaviour
     {
-        public int carHP = 100; 
         private Random random = new Random();
-        
-         [SerializeField] private GameObject txtHP;
-         [SerializeField] private GameObject car2Prefab;
-         [SerializeField] private GameObject loseGamePrefab;
-         [SerializeField] private GameObject textWin;
-         
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.tag != "Train")
-            {
-                double numRndx = - random.NextDouble() * (0.9 - 0) + 0; 
-                double numRndy =  - random.NextDouble() * (0.5 - 0) + 0; 
-                car2Prefab.GetComponent<Rigidbody2D>().velocity = new Vector3( (float)numRndx, (float)numRndy, 0);
-                
-                carHP--;
 
-                txtHP.GetComponent<Text>().text = carHP.ToString();
-                Destroy(collision.gameObject);    
+        [SerializeField] private GameObject txtHP;
+        [SerializeField] private GameObject car2Prefab;
+        [SerializeField] private GameObject loseGamePrefab;
+        [SerializeField] private GameObject textWin;
+
+        [SerializeField] private GameObject boostButton;
+        [SerializeField] private GameObject regenerateButton;
+
+        void Update()
+        {
+            if (Car2.BonusCount > 0)
+            {
+                boostButton.SetActive(true);
+                regenerateButton.SetActive(true);
             }
+
             else
             {
-                carHP -= 20;
-                txtHP.GetComponent<Text>().text = carHP.ToString();
+                boostButton.SetActive(false);
+                regenerateButton.SetActive(false);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "Reverse")
+            {
+                CarControl.isNormalControl = !CarControl.isNormalControl;
             }
 
-            if (carHP < 1)
+            if (collision.gameObject.tag == "Bonus")
+            {
+                Car2.BonusCount++;
+                Destroy(collision.gameObject);
+            }
+
+            else if (collision.gameObject.tag == "Car1")
+            {
+                Car2.Health -= 15;
+                Car1.Health -= 15;
+                txtHP.GetComponent<Text>().text = Car2.Health.ToString();
+            }
+
+            else if (collision.gameObject.tag != "Train" && collision.gameObject.tag != "Bonus")
+            {
+                double numRndx = -random.NextDouble() * (0.9 - 0) + 0;
+                double numRndy = -random.NextDouble() * (0.5 - 0) + 0;
+                car2Prefab.GetComponent<Rigidbody2D>().velocity = new Vector3((float)numRndx, (float)numRndy, 0);
+
+                Car2.Health -= Car1.Damage;
+
+                txtHP.GetComponent<Text>().text = Car2.Health.ToString();
+                Destroy(collision.gameObject);
+            }
+
+            else if (collision.gameObject.tag == "Train")
+            {
+                Physics2D.IgnoreCollision(GameObject.FindGameObjectWithTag("Train").GetComponent<Collider2D>(), GetComponent<Collider2D>());
+                Car2.Health -= 20;
+                txtHP.GetComponent<Text>().text = Car2.Health.ToString();
+            }
+
+            if (Car2.Health < 1)
             {
                 loseGamePrefab.SetActive(true);
                 textWin.GetComponent<Text>().text = "Player 1";
                 Time.timeScale = 0f;
             }
-
         }
-        
-        
     }
-    
-    
 }

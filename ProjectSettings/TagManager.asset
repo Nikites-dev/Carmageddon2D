@@ -7,6 +7,9 @@ TagManager:
   - Train
   - Car1
   - Car2
+  - Bonus
+  - BorderLeft
+  - Reverse
   layers:
   - Default
   - TransparentFX
@@ -14,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - borderLayer
+  - TrainLayer
   - 
   - 
   - 

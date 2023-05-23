@@ -14,9 +14,10 @@ namespace DefaultNamespace
         [SerializeField] private List<Transform> listLeftPoints;
         [SerializeField] private List<Transform> listRightPoints;
         private Random random = new Random();
+        GameObject train;
 
         void Start()
-        {
+        {;
             StartCoroutine(TimeEncriese());
         }
 
@@ -56,7 +57,7 @@ namespace DefaultNamespace
                     Destroy(warning);
                
                     // Создание объекта пули
-                    GameObject train = Instantiate(trainPrefab, pos, listLeftPoints[numRnd].rotation);
+                    train = Instantiate(trainPrefab, pos, listLeftPoints[numRnd].rotation);
                     train.tag = "Train";
                 
                     // Задание скорости пули
@@ -84,14 +85,11 @@ namespace DefaultNamespace
                
                     Destroy(warning);
                     
-                    GameObject train = Instantiate(trainPrefab, pos, listRightPoints[numRnd].rotation);
+                    train = Instantiate(trainPrefab, pos, listRightPoints[numRnd].rotation);
                     train.tag = "Train";
                     
                     train.GetComponent<Rigidbody2D>().velocity = - train.transform.right * (_moveSpeed);
-                    
                 }
-
-
             }
         }
     }
