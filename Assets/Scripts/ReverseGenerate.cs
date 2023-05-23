@@ -6,12 +6,12 @@ using UnityEngine;
 public class ReverseGenerate : MonoBehaviour
 {
     [SerializeField] private GameObject _bonusPrefab;
-    private int time = 30;
+    private int time = 35;
     GameObject bonus;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Spawn(30));
+        StartCoroutine(Spawn(35));
     }
 
     void Update()
