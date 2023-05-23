@@ -54,8 +54,8 @@ namespace DefaultNamespace
 
             else if (collision.gameObject.tag != "Train" && collision.gameObject.tag != "Bonus")
             {
-                int numRndx = random.Next(-5, -3); 
-                int numRndy = random.Next(-2, 3); 
+                int numRndx = random.Next(-9, -3); 
+                int numRndy = random.Next(-4, 3); 
                 car1Prefab.GetComponent<Rigidbody2D>().velocity = new Vector3(numRndx, numRndy, 0);
 
                 Car1.Health -= Car2.Damage;
